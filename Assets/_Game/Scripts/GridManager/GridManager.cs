@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    public static GridManager Instance;
+    
     public Transform BuildingsParent;
     public Dictionary<Vector2Int, Building> Buildings { get; private set; }
 
@@ -16,8 +18,13 @@ public class GridManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null)
+            throw new System.Exception("Multiple instances of GridManager");
+        
         Buildings = new Dictionary<Vector2Int, Building>();
         Obstacles = new Dictionary<Vector2Int, GameObject>();
         Resources = new Dictionary<Vector2Int, Resource>();
+        
+        Instance = this;
     }
 }
