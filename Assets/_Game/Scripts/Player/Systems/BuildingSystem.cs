@@ -95,8 +95,8 @@ public class BuildingSystem : PlayerSystem
             for (var y = 0; y < _buildingPrefab.Size.y; y++)
             {
                 var testingPosition = position + new Vector2Int(x, y);
-                if (GridManager.Instance.Buildings.ContainsKey(testingPosition) 
-                    || GridManager.Instance.Obstacles.ContainsKey(testingPosition))
+                if (GridManager.Instance.Buildings.Contains(testingPosition) 
+                    || GridManager.Instance.Obstacles.Contains(testingPosition))
                     return false;
             }
         }

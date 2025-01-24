@@ -6,6 +6,8 @@ public class Conveyor : Building
     [Header("Conveyor Settings")]
     [SerializeField]
     private float _conveyorSpeed;
+    [SerializeField]
+    private GameObject _conveyorAlternativePrefab;
 
     public List<Transform> Content { get; private set; }
 
