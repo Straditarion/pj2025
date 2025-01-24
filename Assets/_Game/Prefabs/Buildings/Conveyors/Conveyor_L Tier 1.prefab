@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 9052119852195851852, guid: c76800bc92a13fe45a52d823b33a558d, type: 3}
+  m_Sprite: {fileID: -5810176997167212594, guid: 51255ab53fcdd6a4cb231cc983894a87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8500719921730618861}
   - component: {fileID: 7832327725485087355}
   m_Layer: 0
-  m_Name: Conveyor Tier 1
+  m_Name: Conveyor_L Tier 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
