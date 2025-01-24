@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
+  m_Name: Hills Tile
+  m_EditorClassIdentifier: 
+  FillSprite: {fileID: -3417387615437487459, guid: fc97817260e267c4b8489b50e3dfbebd, type: 3}
+  EdgeSprite: {fileID: 0}
+  CornerSprite: {fileID: 0}
