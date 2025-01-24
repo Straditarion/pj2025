@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "New World Biome", menuName = "World Biome")]
 public class WorldBiome : ScriptableObject
@@ -24,12 +25,17 @@ public class WorldBiome : ScriptableObject
     [SerializeField] 
     public float NoiseThreshold;
 
-    [Header("Child")] 
+    [Header("Children")] 
     [SerializeField] 
     public ChildBiome[] ChildBiomes;
+
+    [Header("Ores")] 
+    [SerializeField] 
+    public WorldBiome[] OreBiomes;
     
+    [Header("Assets")] 
     [SerializeField]
-    public WorldTile Tile;
+    public WorldTile[] Tiles;
 
     public float Evaluate(Vector2Int position, int seed, float mask, WorldContext context)
     {
@@ -64,7 +70,7 @@ public class WorldBiome : ScriptableObject
             var childNoise = (noiseValue - childBiome.NoiseRange.x) / (childBiome.NoiseRange.y - childBiome.NoiseRange.x);
             childNoise = Mathf.Clamp01(childNoise) * mask;
             
-            var childRating = childBiome.Biome.Evaluate(position, seed, childNoise, context);
+            var childRating = childBiome.Biome.Evaluate(position, HashCode.Combine(seed), childNoise, context);
 
             if (childRating >= bestChildBiomeRating)
             {
@@ -75,10 +81,28 @@ public class WorldBiome : ScriptableObject
         }
         
         if(bestChildBiome != null)
-            if (bestChildBiome.Biome.TryPlace(position, seed, bestChildBiomeMask, context))
+            if (bestChildBiome.Biome.TryPlace(position, HashCode.Combine(seed), bestChildBiomeMask, context))
                 return true;
 
-        Tile.Instantiate(position, context.Parent);
+        Tiles[Random.Range(0, Tiles.Length)].Instantiate(position, context.Parent);
+
+        WorldBiome bestOreBiome = null;
+        var bestOreBiomeRating = 0f;
+        
+        foreach (var oreBiome in OreBiomes)
+        {
+            var oreRating = oreBiome.Evaluate(position, HashCode.Combine(seed, 7), 1f, context);
+
+            if (oreRating >= bestOreBiomeRating)
+            {
+                bestOreBiome = oreBiome;
+                bestOreBiomeRating = oreRating;
+            }
+        }
+
+        if (bestOreBiome != null)
+            bestOreBiome.TryPlace(position, HashCode.Combine(seed, 7), bestChildBiomeMask, context);
+        
         return true;
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d1cee83f9dd4f4f8a404c6cd3b4c1b, type: 3}
   m_Name: Ocean Noise
   m_EditorClassIdentifier: 
-  mainType: 5
+  mainType: 7
   interpolationType: 2
   frequency: 0.025
   octaves: 3

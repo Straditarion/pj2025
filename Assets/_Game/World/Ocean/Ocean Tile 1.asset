@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
-  m_Name: Plains Tile
+  m_Name: Ocean Tile 1
   m_EditorClassIdentifier: 
-  FillSprite: {fileID: -7975169180990979865, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
-  FillLayer: -0.02
-  BackgroundSprite: {fileID: 4789286810214802757, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
-  BackgroundLayer: -0.01
+  FillSprite: {fileID: -2134103227221032491, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
+  EdgeSprite: {fileID: 0}
+  CornerSprite: {fileID: 0}

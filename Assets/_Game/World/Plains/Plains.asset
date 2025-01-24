@@ -18,4 +18,6 @@ MonoBehaviour:
   ChildBiomes:
   - Biome: {fileID: 11400000, guid: 8c1adc00c5bc3a94c8d38c6e2e22fc90, type: 2}
     NoiseRange: {x: 1, y: -1}
-  Tile: {fileID: 11400000, guid: 866f5b3b0da2a5043993ec87a6104bf7, type: 2}
+  OreBiomes: []
+  Tiles:
+  - {fileID: 11400000, guid: 866f5b3b0da2a5043993ec87a6104bf7, type: 2}

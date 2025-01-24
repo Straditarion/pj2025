@@ -16,4 +16,6 @@ MonoBehaviour:
   NoiseRange: {x: -1, y: 1}
   NoiseThreshold: 0.55
   ChildBiomes: []
-  Tile: {fileID: 11400000, guid: 9a50d0ba72a402240aba3df069bad260, type: 2}
+  OreBiomes: []
+  Tiles:
+  - {fileID: 11400000, guid: 9a50d0ba72a402240aba3df069bad260, type: 2}
