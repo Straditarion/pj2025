@@ -16,13 +16,14 @@ public class Player : MonoBehaviour
         foreach (var playerSystem in gameObject.GetComponents<PlayerSystem>())
         {
             _playerSystems.Add(playerSystem.GetType(), playerSystem);
+            playerSystem.InjectPlayer(this);
         }
         
         Instance = this;
     }
 
-    public PlayerSystem GetSystem<TSystem>()
+    public TSystem GetSystem<TSystem>() where TSystem : PlayerSystem
     {
-        return _playerSystems[typeof(TSystem)];
+        return (TSystem)_playerSystems[typeof(TSystem)];
     }
 }

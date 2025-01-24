@@ -13,6 +13,6 @@ public class Conveyor : Building
 
     public override void ExecuteStep(float deltaTime)
     {
-        throw new System.NotImplementedException();
+        
     }
 }
