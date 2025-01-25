@@ -22,6 +22,7 @@ public class BubbleManager : PlayerSystem
         Visuals.gameObject.SetActive(true);
         
         Visuals.position = (Vector3)World.Spawn;
+        Visuals.position -= Vector3.forward * 2f;
     }
     
     private void Update()
