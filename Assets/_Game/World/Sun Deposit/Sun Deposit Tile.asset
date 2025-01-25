@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
   m_Name: Sun Deposit Tile
   m_EditorClassIdentifier: 
+  Prefab: {fileID: 5297077683890587055, guid: b96475a6535960e49bd78dd75d82324a, type: 3}
   FillSprite: {fileID: 2687863981341954011, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
   FillLayer: -0.03
   BackgroundSprite: {fileID: 0}
