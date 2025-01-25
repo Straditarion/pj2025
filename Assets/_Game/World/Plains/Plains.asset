@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Noise: {fileID: 11400000, guid: 4e90d32d59c7e0641af732ad9984784b, type: 2}
   NoiseRange: {x: 1, y: -1}
-  NoiseThreshold: 0.7
+  NoiseThreshold: 0.62
   ChildBiomes:
   - Biome: {fileID: 11400000, guid: 8c1adc00c5bc3a94c8d38c6e2e22fc90, type: 2}
     NoiseRange: {x: 1, y: -1}
