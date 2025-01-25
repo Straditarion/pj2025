@@ -134,3 +134,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
   _conveyorSpeed: 1
+  IsTurn: 0
+  ConveyorAlternativePrefab: {fileID: 7832327725485087355, guid: f9be787b2c1fe6149a5f32ff25d2e56f, type: 3}

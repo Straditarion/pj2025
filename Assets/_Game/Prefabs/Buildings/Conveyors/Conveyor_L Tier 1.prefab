@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175163187329930040}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8500719921730618861}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!212 &2509001107267385095
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -134,3 +134,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
   _conveyorSpeed: 1
+  IsTurn: 1
+  ConveyorAlternativePrefab: {fileID: 7832327725485087355, guid: e19d14bbcd949a74680e05ef37914ca8, type: 3}

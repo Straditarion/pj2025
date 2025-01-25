@@ -32,6 +32,7 @@ public class BuildingSystem : PlayerSystem
         var objPosition = CalculateObjectPosition(position);
         var newBuilding = Instantiate(_buildingPrefab, objPosition, Quaternion.identity);
         newBuilding.transform.SetParent(GridManager.Instance.BuildingsParent);
+        newBuilding.Initialize(_rotation);
         
         for (var x = 0; x < _buildingPrefab.Size.x; x++)
         {
@@ -40,8 +41,6 @@ public class BuildingSystem : PlayerSystem
                 GridManager.Instance.Buildings.Add(position + new Vector2Int(x, y), newBuilding);
             }
         }
-        
-        newBuilding.Initialize(_rotation);
     }
 
     public void Remove(Vector2Int position)
