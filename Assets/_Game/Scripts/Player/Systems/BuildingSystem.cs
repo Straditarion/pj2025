@@ -32,7 +32,7 @@ public class BuildingSystem : PlayerSystem
         var objPosition = CalculateObjectPosition(position);
         var newBuilding = Instantiate(_buildingPrefab, objPosition, Quaternion.identity);
         newBuilding.transform.SetParent(GridManager.Instance.BuildingsParent);
-        newBuilding.Initialize(_rotation);
+        newBuilding.Initialize(position, _rotation);
         
         for (var x = 0; x < _buildingPrefab.Size.x; x++)
         {
@@ -112,10 +112,9 @@ public class BuildingSystem : PlayerSystem
         if (_buildingPrefab == null)
             return;
         
-        var newGhost = Instantiate(_buildingPrefab, position, Quaternion.identity);
-        newGhost.AsGhost(rotation);
-        
         var pos = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+        var newGhost = Instantiate(_buildingPrefab, position, Quaternion.identity);
+        newGhost.AsGhost(pos, rotation);
         newGhost.SpriteRenderer.color = GetGhostColor(pos);
         newGhost.SpriteRenderer.sortingOrder = 20;
         

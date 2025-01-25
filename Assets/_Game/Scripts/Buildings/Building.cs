@@ -7,9 +7,9 @@ public abstract class Building : MonoBehaviour
     [SerializeField]
     public Vector2Int Size;
 
-
     public SpriteRenderer SpriteRenderer { get; private set; }
     public int Rotation { get; private set; }
+    public Vector2Int GridPosition { get; private set; }
     
     public Vector2Int Forward => Rotation switch
     {
@@ -30,26 +30,31 @@ public abstract class Building : MonoBehaviour
     
     public abstract void ExecuteStep(float deltaTime);
 
-    public void Initialize(int rotation)
+    public void Initialize(Vector2Int gridPosition, int rotation)
     {
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         
         Rotation = rotation;
         SpriteRenderer.transform.rotation = Quaternion.Euler(0, 0, SpriteRenderer.transform.eulerAngles.z + Rotation * -90);
+        GridPosition = gridPosition;
         
         OnInit();
     }
 
-    public void AsGhost(int rotation)
+    public void AsGhost(Vector2Int gridPosition, int rotation)
     {
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         
         Rotation = rotation;
         SpriteRenderer.transform.rotation = Quaternion.Euler(0, 0, SpriteRenderer.transform.eulerAngles.z + Rotation * -90);
+        GridPosition = gridPosition;
     }
     
     protected virtual void OnInit()
     {
         
     }
+
+    public abstract bool CanTakeItem(Transform item);
+    public abstract void TakeItem(Transform item);
 }

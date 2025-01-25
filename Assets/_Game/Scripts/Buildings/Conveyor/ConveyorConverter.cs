@@ -72,7 +72,7 @@ public class ConveyorConverter : MonoBehaviour
     {
         var newBuilding = Instantiate(replacedConveyor.ConveyorAlternativePrefab, (Vector3Int)position, Quaternion.identity);
         newBuilding.transform.SetParent(GridManager.Instance.BuildingsParent);
-        newBuilding.Initialize(replacedConveyor.Rotation);
+        newBuilding.Initialize(position, replacedConveyor.Rotation);
         newBuilding.SpriteRenderer.flipY = mirror;
         Destroy(replacedConveyor.gameObject);
         GridManager.Instance.Buildings.Replace(position, newBuilding);

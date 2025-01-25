@@ -23,6 +23,12 @@ public class ConveyorScheduler : MonoBehaviour
     {
         _conveyors.Add(conveyor);
     }
+    
+    public void RemoveConveyor(Conveyor conveyor)
+    {
+        _conveyors.Remove(conveyor);
+    }
+
 
     private void Update()
     {
