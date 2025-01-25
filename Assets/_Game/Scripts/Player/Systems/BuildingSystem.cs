@@ -57,6 +57,11 @@ public class BuildingSystem : PlayerSystem
         var size = (Vector2)building.Size / 2f;
         var leftCorner = new Vector3( gameObjectPosition.x - size.x, gameObjectPosition.y - size.y, 0 ) + new Vector3(0.5f, 0.5f, 0);
         var leftCornerInt = new Vector2Int(Mathf.RoundToInt(leftCorner.x), Mathf.RoundToInt(leftCorner.y));
+
+        if (building is Conveyor conveyor)
+        {
+            Destroy(conveyor.Item.gameObject);
+        }
         
         Destroy(building.gameObject);
         

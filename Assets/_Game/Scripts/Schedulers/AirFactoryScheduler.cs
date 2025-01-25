@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirFactoryScheduler : Scheduler<AirFactory>
+public class AirFactoryScheduler : Scheduler
 {
     public static AirFactoryScheduler Instance;
     
