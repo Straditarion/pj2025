@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Scheduler<TBuilding> : MonoBehaviour where TBuilding : Building
+public abstract class Scheduler<TBuilding> : MonoBehaviour where TBuilding : ISchedulable
 {
     [SerializeField] private float timeStep;
     

@@ -17,6 +17,9 @@ public class BuildingSystem : PlayerSystem
     public void ChangePrefab(Building prefab)
     {
         _buildingPrefab = prefab;
+        
+        if(_ghost != null) 
+            Destroy(_ghost.gameObject);
     }
     
     public void Place(Vector2Int position)

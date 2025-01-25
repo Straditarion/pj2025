@@ -74,7 +74,7 @@ public class ResourceGenerator : Building
     {
         var (_, output) = GetIOConveyors();
         var availableOutputs = output.Where(x => x.CanTakeItem(resource)).ToList();
-        if (output.Count == 0)
+        if (availableOutputs.Count == 0)
             return;
         
         var randomOutput = availableOutputs[Random.Range(0, availableOutputs.Count)];

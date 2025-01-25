@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public abstract class Building : MonoBehaviour
+public abstract class Building : MonoBehaviour, ISchedulable
 {
     [Header("General Settings")]
     [SerializeField]

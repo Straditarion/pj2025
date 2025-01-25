@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3566992298603658321}
   - component: {fileID: 2509001107267385095}
+  - component: {fileID: 5264161298496484759}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -87,6 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5264161298496484759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175163187329930040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7644098cf0964c88a0124adc8854978d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 9052119852195851852, guid: c76800bc92a13fe45a52d823b33a558d, type: 3}
+  - {fileID: -1057406645138252541, guid: c24f9412500bd0d42ba23c2b1a177fe2, type: 3}
+  _framesPerSecond: 10
 --- !u!1 &2568539663089897387
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
-  _conveyorSpeed: 1
+  _conveyorSpeed: 3
   IsTurn: 0
   ConveyorAlternativePrefab: {fileID: 7832327725485087355, guid: f9be787b2c1fe6149a5f32ff25d2e56f, type: 3}
