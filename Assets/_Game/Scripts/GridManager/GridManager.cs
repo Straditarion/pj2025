@@ -13,7 +13,7 @@ public class GridManager : MonoBehaviour
     public Grid<GameObject> Obstacles { get; private set; }
     
     public Transform ResourcesParent;
-    public Grid<Resource> Resources { get; private set; }
+    public Grid<ResourceOre> Resources { get; private set; }
     
     public Transform EnvironmentParent;
 

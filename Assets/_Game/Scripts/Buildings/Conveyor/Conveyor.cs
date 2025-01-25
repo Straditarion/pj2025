@@ -11,7 +11,7 @@ public class Conveyor : Building
     [SerializeField]
     public Conveyor ConveyorAlternativePrefab;
 
-    public Transform Item { get; set; }
+    public Resource Item { get; set; }
 
     protected override void OnInit()
     {
@@ -23,15 +23,15 @@ public class Conveyor : Building
         ConveyorScheduler.Instance.RemoveConveyor(this);
     }
     
-    public override bool CanTakeItem(Transform item) => Item == null;
-    public override void TakeItem(Transform item) => Item = item;
+    public override bool CanTakeItem(Resource item) => Item == null;
+    public override void TakeItem(Resource item) => Item = item;
 
     public override void ExecuteStep(float deltaTime)
     {
         if(Item == null)
             return;
 
-        var distanceToCenter = Vector2.Distance(Item.position, transform.position);
+        var distanceToCenter = Vector2.Distance(Item.transform.position, transform.position);
 
         if (distanceToCenter < 2 * deltaTime)
         {
@@ -45,7 +45,7 @@ public class Conveyor : Building
         }
 
         var travelDistance = Mathf.Min(distanceToCenter, _conveyorSpeed * deltaTime);
-        var travelDirection = (transform.position - Item.position).normalized;
-        Item.position += travelDirection * travelDistance;
+        var travelDirection = (transform.position - Item.transform.position).normalized;
+        Item.transform.position += travelDirection * travelDistance;
     }
 }
