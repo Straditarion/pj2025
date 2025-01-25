@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainType: 5
   interpolationType: 2
-  frequency: 0.02
+  frequency: 0.04
   octaves: 4
   lacunarity: 2
   gain: 0.5
