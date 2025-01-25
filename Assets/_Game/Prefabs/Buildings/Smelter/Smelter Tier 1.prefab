@@ -115,9 +115,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261606764813221879}
-  - component: {fileID: -4348943170090773408}
+  - component: {fileID: -4994358779043125465}
   m_Layer: 0
-  m_Name: Air Factory Tier 1
+  m_Name: Smelter Tier 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ Transform:
   - {fileID: 709611223459125596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4348943170090773408
+--- !u!114 &-4994358779043125465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,11 +148,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8331339660223622803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35db746ca6cd01248acf9e1fccf7b563, type: 3}
+  m_Script: {fileID: 11500000, guid: d60d5870afaff1140868d02ef35e26cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Size: {x: 2, y: 2}
-  _fuel: {fileID: 1590493058230501027, guid: 01efe9b054c017f4a8cb623c485ef851, type: 3}
-  _production: 7
-  _duration: 1
-  _animation: {fileID: 1722355973013121492}
+  _fuel: {fileID: 0}
+  _recipes: []
+  _animation: {fileID: 0}

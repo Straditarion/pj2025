@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirFactoryScheduler : Scheduler<AirFactory>
+public class BuildingScheduler : Scheduler<Building>
 {
-    public static AirFactoryScheduler Instance;
+    public static BuildingScheduler Instance;
     
     private void Awake()
     {

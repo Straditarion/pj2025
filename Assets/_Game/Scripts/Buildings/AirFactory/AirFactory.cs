@@ -19,12 +19,12 @@ public class AirFactory : Building
     
     protected override void OnInit()
     {
-        AirFactoryScheduler.Instance.Register(this);
+        BuildingScheduler.Instance.Register(this);
     }
 
     private void OnDestroy()
     {
-        AirFactoryScheduler.Instance.Remove(this);
+        BuildingScheduler.Instance.Remove(this);
     }
 
     public override bool CanTakeItem(Resource item) => item.gameObject.name.StartsWith(_fuel.gameObject.name) && _timer <= 0f;

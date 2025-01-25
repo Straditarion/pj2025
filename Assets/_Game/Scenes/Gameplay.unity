@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe715d36a9cbbbf46bf7cb09d8e0f4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Volume: 400
+  Volume: 60
   Exponent: 0.4
   Visuals: {fileID: 1444483892}
   World: {fileID: 687030066}

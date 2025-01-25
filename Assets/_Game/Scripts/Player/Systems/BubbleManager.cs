@@ -17,6 +17,8 @@ public class BubbleManager : PlayerSystem
 
     private float _radius;
 
+    public float Radius => _radius;
+
     void Start()
     {
         Visuals.gameObject.SetActive(true);
@@ -29,7 +31,7 @@ public class BubbleManager : PlayerSystem
     {
         _radius = Mathf.Pow(Volume, Exponent);
         
-        Visuals.localScale = Vector3.one * _radius;
+        Visuals.localScale = Vector3.one * _radius * 2f;
     }
 
     public bool IsWithinBubble(Vector2 position, float size)
