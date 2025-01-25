@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceGeneratorScheduler : Scheduler<ResourceGenerator>
+public class ResourceGeneratorScheduler : Scheduler
 {
     public static ResourceGeneratorScheduler Instance;
     

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Scheduler<TBuilding> : MonoBehaviour where TBuilding : ISchedulable
+public abstract class Scheduler : MonoBehaviour
 {
     [SerializeField] private float timeStep;
     
-    private readonly List<TBuilding> _values = new();
+    private readonly List<ISchedulable> _values = new();
     private float _timer;
 
-    public void Register(TBuilding value)
+    public void Register(ISchedulable value)
     {
         _values.Add(value);
     }
     
-    public void Remove(TBuilding value)
+    public void Remove(ISchedulable value)
     {
         _values.Remove(value);
     }

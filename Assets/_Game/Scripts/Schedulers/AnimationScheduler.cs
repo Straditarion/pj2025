@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class AnimationScheduler : Scheduler<SpriteAnimation>
+public class AnimationScheduler : Scheduler
 {
     public static AnimationScheduler Instance;
     
