@@ -2,5 +2,5 @@
 
 public abstract class ResourceOre : MonoBehaviour
 {
-    
+    public Resource ResourcePrefab;
 }
