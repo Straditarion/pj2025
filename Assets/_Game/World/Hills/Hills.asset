@@ -19,3 +19,4 @@ MonoBehaviour:
   OreBiomes: []
   Tiles:
   - {fileID: 11400000, guid: 9a50d0ba72a402240aba3df069bad260, type: 2}
+  - {fileID: 11400000, guid: 6310256f9c51dcb49a6a6e0c7a441a1e, type: 2}

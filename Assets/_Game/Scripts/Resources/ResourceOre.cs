@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class ResourceOre : MonoBehaviour
+public class ResourceOre : MonoBehaviour
 {
     public Resource ResourcePrefab;
 }

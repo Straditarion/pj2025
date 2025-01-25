@@ -101,7 +101,7 @@ public class WorldBiome : ScriptableObject
         }
 
         if (bestOreBiome != null)
-            bestOreBiome.TryPlace(position, HashCode.Combine(seed, 7), bestChildBiomeMask, context);
+            bestOreBiome.TryPlace(position, HashCode.Combine(seed, 7), 1f, context);
         
         return true;
     }
