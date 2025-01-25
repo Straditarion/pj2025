@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScheduler : Scheduler
+public class BuildingScheduler : Scheduler
 {
-    public static EnemyScheduler Instance;
+    public static BuildingScheduler Instance;
     
     private void Awake()
     {
         if ( Instance != null )
-            throw new Exception("Multiple instances of ResourceGeneratorScheduler.");
+            throw new Exception("Multiple instances of BuildingScheduler.");
         
         Instance = this;
     }
