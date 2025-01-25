@@ -60,7 +60,8 @@ public class BuildingSystem : PlayerSystem
 
         if (building is Conveyor conveyor)
         {
-            Destroy(conveyor.Item.gameObject);
+            if (conveyor.Item != null)
+                Destroy(conveyor.Item.gameObject);
         }
         
         Destroy(building.gameObject);
