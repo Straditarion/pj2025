@@ -15,9 +15,21 @@ public class ResourceGenerator : Building
     
     public override void ExecuteStep(float deltaTime)
     {
-        var resourceCount = 1;
+        var resourceCount = 0;
         
-        //detect resources under the building
+        for (int x = 0; x < Size.x; x++)
+        {
+            for (int y = 0; y < Size.y; y++)
+            {
+                if(!GridManager.Instance.Resources.TryGetValue(GridPosition + new Vector2Int(x, y), out var resource))
+                    continue;
+                
+                if(_resourcePrefab != resource.ResourcePrefab)
+                    continue;
+
+                resourceCount += 1;
+            }
+        }
         
         _timer += Time.deltaTime;
         if ( _timer < 1f / (_frequency * resourceCount) )
@@ -26,5 +38,6 @@ public class ResourceGenerator : Building
         _timer -= 1f / (_frequency * resourceCount);
         
         //spawn resrouce
+        Debug.Log("Spawn allergy!");
     }
 }
