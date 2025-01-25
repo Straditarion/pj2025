@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 582376eaf2becac4e83f2653054a0c59
+guid: aba18faeec487f24ba9d8990dff89f0d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4935128027780378874
-    second: boncannon_platform_0
+      213: -562653714476472352
+    second: ore_titanium_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boncannon_platform_0
+      name: ore_titanium_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60f8317c437e28bb0800000000000000
-      internalID: -4935128027780378874
+      spriteID: 0e763118d6d0138f0800000000000000
+      internalID: -562653714476472352
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      boncannon_platform_0: -4935128027780378874
+      ore_titanium_0: -562653714476472352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
