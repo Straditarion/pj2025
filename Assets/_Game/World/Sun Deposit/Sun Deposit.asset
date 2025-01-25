@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c9bc57eee304984bb2922cf1d5aa66e, type: 3}
-  m_Name: Hills
+  m_Name: Sun Deposit
   m_EditorClassIdentifier: 
-  Noise: {fileID: 11400000, guid: ce67e829ee47da349b34178dcb8fe962, type: 2}
-  NoiseRange: {x: -1, y: 1}
-  NoiseThreshold: 0.55
+  Noise: {fileID: 11400000, guid: 8cc8c72201ce1dd4891c92fb6d0dd543, type: 2}
+  NoiseRange: {x: 1, y: 0}
+  NoiseThreshold: 0.96
   ChildBiomes: []
   OreBiomes: []
   Tiles:
-  - {fileID: 11400000, guid: 9a50d0ba72a402240aba3df069bad260, type: 2}
-  - {fileID: 11400000, guid: 6310256f9c51dcb49a6a6e0c7a441a1e, type: 2}
+  - {fileID: 11400000, guid: 78100b26e799af24fb4d93df094de7d0, type: 2}

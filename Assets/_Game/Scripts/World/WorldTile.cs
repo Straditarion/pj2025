@@ -19,7 +19,7 @@ public class WorldTile : ScriptableObject
             container.transform.parent = parent.transform;
         
             container.transform.position = (Vector2)position;
-            container.transform.position += new Vector3(0f, 0f, FillLayer);
+            container.transform.position += new Vector3(0f, 0f, FillLayer + position.y / 1024f);
             
             var renderer = container.AddComponent<SpriteRenderer>();
             renderer.sprite = FillSprite;
