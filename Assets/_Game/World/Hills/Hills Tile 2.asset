@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
   m_Name: Hills Tile 2
   m_EditorClassIdentifier: 
+  Obstacle: 1
+  Prefab: {fileID: 0}
   FillSprite: {fileID: -2408500853897401838, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
   FillLayer: -0.03
+  FillObjectLayer: 11
   BackgroundSprite: {fileID: 4789286810214802757, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
   BackgroundLayer: -0.01
+  BackgroundObjectLayer: 10

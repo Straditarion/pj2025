@@ -84,7 +84,7 @@ public class WorldBiome : ScriptableObject
             if (bestChildBiome.Biome.TryPlace(position, HashCode.Combine(seed), bestChildBiomeMask, context))
                 return true;
 
-        Tiles[Random.Range(0, Tiles.Length)].Instantiate(position, context.Parent);
+        Tiles[Random.Range(0, Tiles.Length)].Instantiate(position, context);
 
         WorldBiome bestOreBiome = null;
         var bestOreBiomeRating = 0f;

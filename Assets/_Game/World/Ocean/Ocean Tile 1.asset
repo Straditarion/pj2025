@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
   m_Name: Ocean Tile 1
   m_EditorClassIdentifier: 
+  Obstacle: 1
+  Prefab: {fileID: 0}
   FillSprite: {fileID: -2134103227221032491, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
-  EdgeSprite: {fileID: 0}
-  CornerSprite: {fileID: 0}
+  FillLayer: 0
+  FillObjectLayer: 10
+  BackgroundSprite: {fileID: 0}
+  BackgroundLayer: 0
+  BackgroundObjectLayer: 10

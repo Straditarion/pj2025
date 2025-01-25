@@ -4,6 +4,7 @@ using UnityEngine;
 public class WorldContext
 {
     public GameObject Parent;
+    public GameObject TempParent;
     
     private readonly Dictionary<(FastNoiseExtension noise, int seed), FastNoise> _cache = new Dictionary<(FastNoiseExtension noise, int seed), FastNoise>();
     
