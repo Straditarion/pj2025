@@ -72,7 +72,7 @@ public class WorldGenerator : MonoBehaviour
             
             BakeCamera.targetTexture = bakeTexture;
             BakeCamera.ResetAspect();
-            BakeCamera.orthographicSize = WorldSize;
+            BakeCamera.orthographicSize = WorldSize + 0.5f;
             BakeCamera.cullingMask = bakeLayer.LayerMask;
             BakeCamera.Render();
             
