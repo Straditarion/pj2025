@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildingSystem : PlayerSystem
 {
@@ -24,6 +25,9 @@ public class BuildingSystem : PlayerSystem
     
     public void Place(Vector2Int position)
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        
         if (_buildingPrefab == null)
             return;
         
