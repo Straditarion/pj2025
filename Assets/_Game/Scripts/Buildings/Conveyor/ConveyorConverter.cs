@@ -18,6 +18,9 @@ public class ConveyorConverter : MonoBehaviour
 
     private void ConvertAddedForward(Vector2Int position, Conveyor conveyor)
     {
+        if(conveyor.JunctionSender)
+            return;
+        
         position = position + conveyor.Forward;
         if (!GridManager.Instance.Buildings.TryGetValue(position, out var nextBuilding)) 
             return;
@@ -44,6 +47,9 @@ public class ConveyorConverter : MonoBehaviour
 
     private void ConveyorAddedSelf(Vector2Int position, Conveyor conveyor)
     {
+        if(conveyor.JunctionSender || conveyor.JunctionReceiver)
+            return;
+        
         var forward = GridManager.Instance.Buildings.TryGetValue(position + conveyor.Forward, out var buildingForward);
         var right = GridManager.Instance.Buildings.TryGetValue(position + conveyor.Right, out var buildingRight);
         var back = GridManager.Instance.Buildings.TryGetValue(position + conveyor.Back, out var buildingBack);

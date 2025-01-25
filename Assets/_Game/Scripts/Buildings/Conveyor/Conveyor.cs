@@ -7,6 +7,8 @@ public class Conveyor : Building
     private float _conveyorSpeed;
     
     public bool IsTurn;
+    public bool JunctionSender;
+    public bool JunctionReceiver;
     
     [SerializeField]
     public Conveyor ConveyorAlternativePrefab;
@@ -35,8 +37,13 @@ public class Conveyor : Building
 
         if (distanceToCenter < 2 * deltaTime)
         {
-            var forward = GridManager.Instance.Buildings.TryGetValue(GridPosition + Forward, out var other);
+            var sender = JunctionSender ? Forward : Vector2Int.zero;
+            
+            var forward = GridManager.Instance.Buildings.TryGetValue(GridPosition + Forward + sender, out var other);
             if (!forward || !other.CanTakeItem(Item)) 
+                return;
+            
+            if(JunctionSender && (other is not Conveyor otherConveyor || !otherConveyor.JunctionReceiver))
                 return;
             
             other.TakeItem(Item);
