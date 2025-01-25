@@ -5,6 +5,7 @@ public class WorldContext
 {
     public GameObject Parent;
     public GameObject TempParent;
+    public Vector2 Spawn = new Vector2(16777216, 16777216);
     
     private readonly Dictionary<(FastNoiseExtension noise, int seed), FastNoise> _cache = new Dictionary<(FastNoiseExtension noise, int seed), FastNoise>();
     

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[DefaultExecutionOrder(50)]
 public class WorldGenerator : MonoBehaviour
 {
     [Serializable]
@@ -31,12 +32,15 @@ public class WorldGenerator : MonoBehaviour
     private GameObject _container;
     private RenderTexture[] _worldLayerTextures;
 
+    [HideInInspector] 
+    public Vector2 Spawn;
+
     private void Awake()
     {
         _mpb = new MaterialPropertyBlock();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         _container = new GameObject("Container");
         _container.transform.parent = transform;
@@ -100,9 +104,11 @@ public class WorldGenerator : MonoBehaviour
             layerSpriteRenderer.SetPropertyBlock(_mpb);
             _mpb.Clear();
         }
+
+        Spawn = context.Spawn;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         if(_container != null)
             Destroy(_container);
