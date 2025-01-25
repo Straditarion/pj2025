@@ -10,6 +10,16 @@ public class ResourceGenerator : Building
 
     private float _timer;
     
+    protected override void OnInit()
+    {
+        ResourceGeneratorScheduler.Instance.RegisterConveyor(this);
+    }
+
+    private void OnDestroy()
+    {
+        ResourceGeneratorScheduler.Instance.RemoveConveyor(this);
+    }
+    
     public override bool CanTakeItem(Resource item) => false;
     public override void TakeItem(Resource item) { }
     
