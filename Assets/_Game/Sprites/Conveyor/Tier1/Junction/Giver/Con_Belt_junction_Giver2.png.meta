@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6af91b9c06e2c0148998b56b974ff0ed
+guid: 51dde4040a0d7dd48a406d868c5626d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2817813186423584760
-    second: Ink_0
+      213: -8098152282478143615
+    second: Con_Belt_junction_Giver2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ink_0
+      name: Con_Belt_junction_Giver2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8088fcb16dd15e8d0800000000000000
-      internalID: -2817813186423584760
+      spriteID: 1871fd9a7659d9f80800000000000000
+      internalID: -8098152282478143615
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ink_0: -2817813186423584760
+      Con_Belt_junction_Giver2_0: -8098152282478143615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

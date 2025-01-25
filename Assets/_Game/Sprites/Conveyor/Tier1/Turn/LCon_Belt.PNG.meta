@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 51255ab53fcdd6a4cb231cc983894a87
+guid: 7b1f9cef1c89a7f48b5d2c34a230db3a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5810176997167212594
-    second: LCon_Belt_0
+      213: -4572855856512516333
+    second: LCon_Belt 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -96,11 +96,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LCon_Belt_0
+      name: LCon_Belt 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec7d3b10eca1e5fa0800000000000000
-      internalID: -5810176997167212594
+      spriteID: 31fb18793d3f980c0800000000000000
+      internalID: -4572855856512516333
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LCon_Belt_0: -5810176997167212594
+      LCon_Belt 1_0: -4572855856512516333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

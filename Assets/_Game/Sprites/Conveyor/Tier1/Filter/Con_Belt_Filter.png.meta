@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 80b844066c01ddc42a6fddbc653c8b44
+guid: 81f42fce13b187d49b61f9e814dc3c41
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2131037900856933503
-    second: Con_Belt_Filter_0
+      213: -5707382678466332976
+    second: Con_Belt_Filter 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Con_Belt_Filter_0
+      name: Con_Belt_Filter 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7cb87b1ea7f29d10800000000000000
-      internalID: 2131037900856933503
+      spriteID: 0d6fbc461bd4bc0b0800000000000000
+      internalID: -5707382678466332976
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Con_Belt_Filter_0: 2131037900856933503
+      Con_Belt_Filter 1_0: -5707382678466332976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
