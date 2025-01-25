@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 9052119852195851852, guid: c76800bc92a13fe45a52d823b33a558d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5264161298496484759
@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprites:
-  - {fileID: 9052119852195851852, guid: c76800bc92a13fe45a52d823b33a558d, type: 3}
-  - {fileID: -1057406645138252541, guid: c24f9412500bd0d42ba23c2b1a177fe2, type: 3}
-  _framesPerSecond: 10
+  - {fileID: 1227701198083848999, guid: 8c5f24490e0bc6347b1cad9390fce7df, type: 3}
+  - {fileID: -7994058821640992018, guid: c717a90ec1d83ce47ad0ec804621fd3e, type: 3}
+  _framesPerSecond: 20
 --- !u!1 &2568539663089897387
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
-  _conveyorSpeed: 3
+  _conveyorSpeed: 2.5
   IsTurn: 0
   ConveyorAlternativePrefab: {fileID: 7832327725485087355, guid: f9be787b2c1fe6149a5f32ff25d2e56f, type: 3}

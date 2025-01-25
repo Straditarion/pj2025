@@ -7,13 +7,13 @@ public class SpriteAnimation : MonoBehaviour, ISchedulable
     [SerializeField] private int _framesPerSecond;
     
     private SpriteRenderer _spriteRenderer;
-    private float _timer;
-    private int _currentIndex = 0;
 
+    private int SpriteIndex => Mathf.RoundToInt(Time.time * _framesPerSecond) % _sprites.Length;
+    
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.sprite = _sprites[_currentIndex];
+        _spriteRenderer.sprite = _sprites[SpriteIndex];
         
         AnimationScheduler.Instance.Register(this);
     }
@@ -25,12 +25,6 @@ public class SpriteAnimation : MonoBehaviour, ISchedulable
     
     public void ExecuteStep(float deltaTime)
     {
-        // _timer += deltaTime;
-        // if(_timer < 1f / _framesPerSecond)
-        //     return;
-        // _timer -= 1f / _framesPerSecond;
-
-        _currentIndex = (_currentIndex + 1) % _sprites.Length;
-        _spriteRenderer.sprite = _sprites[_currentIndex];
+        _spriteRenderer.sprite = _sprites[SpriteIndex];
     }
 }
