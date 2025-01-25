@@ -55,6 +55,6 @@ public abstract class Building : MonoBehaviour
         
     }
 
-    public abstract bool CanTakeItem(Transform item);
-    public abstract void TakeItem(Transform item);
+    public abstract bool CanTakeItem(Resource item);
+    public abstract void TakeItem(Resource item);
 }
