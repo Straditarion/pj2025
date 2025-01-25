@@ -20,3 +20,4 @@ MonoBehaviour:
   BackgroundSprite: {fileID: 0}
   BackgroundLayer: -0.01
   BackgroundObjectLayer: 0
+  SpawnCondition: 1

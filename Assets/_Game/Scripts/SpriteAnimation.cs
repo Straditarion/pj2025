@@ -25,6 +25,7 @@ public class SpriteAnimation : MonoBehaviour, ISchedulable
     
     public void ExecuteStep(float deltaTime)
     {
-        _spriteRenderer.sprite = _sprites[SpriteIndex];
+        if (this.enabled)
+            _spriteRenderer.sprite = _sprites[SpriteIndex];
     }
 }

@@ -19,9 +19,16 @@ public class WorldTile : ScriptableObject
     public float BackgroundLayer;
     [SerializeField]
     public int BackgroundObjectLayer;
+    [SerializeField]
+    public bool SpawnCondition;
 
     public void Instantiate(Vector2Int position, WorldContext context)
     {
+        if (SpawnCondition && ((Vector2)position).sqrMagnitude < context.Spawn.sqrMagnitude)
+        {
+            context.Spawn = position;
+        }
+        
         if (Obstacle || Prefab != null)
         {
             GameObject container;
