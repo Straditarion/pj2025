@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76105adc77742cb954cb5d2c9a5e80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conveyorPrefab: {fileID: 7832327725485087355, guid: e19d14bbcd949a74680e05ef37914ca8, type: 3}
+  _conveyorPrefab: {fileID: 1376531967490522190, guid: da4b7d4083cd77644ac0d7c306f6836a, type: 3}
 --- !u!114 &446434681
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,12 +15,12 @@ public class Conveyor : Building
 
     protected override void OnInit()
     {
-        ConveyorScheduler.Instance.RegisterConveyor(this);
+        ConveyorScheduler.Instance.Register(this);
     }
 
     private void OnDestroy()
     {
-        ConveyorScheduler.Instance.RemoveConveyor(this);
+        ConveyorScheduler.Instance.Remove(this);
     }
     
     public override bool CanTakeItem(Resource item) => Item == null;

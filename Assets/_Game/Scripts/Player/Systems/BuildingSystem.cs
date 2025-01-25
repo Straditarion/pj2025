@@ -6,8 +6,6 @@ public class BuildingSystem : PlayerSystem
     private Building _buildingPrefab;
     private Building _ghost;
     
-    public Building _conveyorPrefab;
-    
     public void Rotate()
     {
         _rotation = (_rotation + 1) % 4;
@@ -124,11 +122,5 @@ public class BuildingSystem : PlayerSystem
     private Color GetGhostColor(Vector2Int position)
     {
         return CanPlaceBuildingOnPosition(position) ? new Color(1f, 1f, 1f, .5f) : new Color(1f, 0f, 0f, .5f);
-    }
-    
-    private void Awake()
-    {
-        //DEBUG
-        ChangePrefab(_conveyorPrefab);
     }
 }
