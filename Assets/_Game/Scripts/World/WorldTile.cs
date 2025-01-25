@@ -4,6 +4,8 @@ using UnityEngine;
 public class WorldTile : ScriptableObject
 {
     [SerializeField]
+    public GameObject Prefab;
+    [SerializeField]
     public Sprite FillSprite;
     [SerializeField]
     public float FillLayer;
@@ -15,7 +17,16 @@ public class WorldTile : ScriptableObject
     public void Instantiate(Vector2Int position, GameObject parent)
     {
         {
-            var container = new GameObject("Tile");
+            GameObject container;
+            if (Prefab == null)
+            {
+                container = new GameObject("Tile");
+            }
+            else
+            {
+                container = Instantiate(Prefab);
+            }
+
             container.transform.parent = parent.transform;
         
             container.transform.position = (Vector2)position;
