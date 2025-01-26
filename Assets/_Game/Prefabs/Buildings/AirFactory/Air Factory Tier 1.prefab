@@ -152,6 +152,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _size: {x: 2, y: 2}
+  Cost:
+  - Resource: {fileID: 1590493058230501027, guid: 01efe9b054c017f4a8cb623c485ef851, type: 3}
+    Amount: 25
+  - Resource: {fileID: 1590493058230501027, guid: e1946df21320a5a40be6ed8381d79995, type: 3}
+    Amount: 25
+  - Resource: {fileID: 1590493058230501027, guid: 731650711ce5c174d85651b85668d3e7, type: 3}
+    Amount: 10
+  - Resource: {fileID: 1590493058230501027, guid: 13cb2670e1587c54c8be53c1ea35e5a7, type: 3}
+    Amount: 3
+  - Resource: {fileID: 1590493058230501027, guid: 0ffc2a0cfddbdf84784cc8f7ed6f9572, type: 3}
+    Amount: 1
   _fuel: {fileID: 1590493058230501027, guid: 01efe9b054c017f4a8cb623c485ef851, type: 3}
   _production: 7
   _duration: 1
