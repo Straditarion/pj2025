@@ -32,12 +32,21 @@ public class BubbleManager : PlayerSystem
         _radius = Mathf.Pow(Volume, Exponent);
         
         Visuals.localScale = Vector3.one * _radius * 2f;
+
+        foreach (var building in GridManager.Instance.Buildings.Values.Values)
+        {
+            if(building == null)
+                continue;
+            
+            if (!IsWithinBubble(building.transform.position, Mathf.Max(building.Size.x, building.Size.y)))
+                Destroy(building.gameObject);
+        }
     }
 
     public bool IsWithinBubble(Vector2 position, float size)
     {
         var distance = (position - (Vector2)Visuals.position).magnitude;
         
-        return distance - size >= _radius;
+        return distance + size * 0.6f <= _radius;
     }
 }
