@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Chest : Building
 {
-    private List<Resource> _content = new();
+    public static Action OnGlobalResourceAmountChanged { get; set; }
 
+    public List<Resource> Content => _content;
+    
+    private List<Resource> _content = new();
     private int _step;
     
     protected override void OnInit()
@@ -27,7 +31,7 @@ public class Chest : Building
 
     public override void TakeItem(Resource item)
     {
-        _content.Add(item);
+        AddItem(item);
         item.transform.position = Vector2.one * 7777;
     }
 
@@ -48,10 +52,26 @@ public class Chest : Building
         {
             resource.transform.position = output.transform.position;
             output.TakeItem(resource);
-            _content.Remove(resource);
+            RemoveItem(resource);
             break;
         }
 
         _step = (_step + 1) % (int.MaxValue - 1);
+    }
+
+    public void AddItem(Resource item, bool triggerEvent = true)
+    {
+        _content.Add(item);
+        
+        if(triggerEvent)
+            OnGlobalResourceAmountChanged.Invoke();
+    }
+
+    public void RemoveItem(Resource item, bool triggerEvent = true)
+    {
+        _content.Remove(item);
+        
+        if(triggerEvent)
+            OnGlobalResourceAmountChanged.Invoke();
     }
 }
