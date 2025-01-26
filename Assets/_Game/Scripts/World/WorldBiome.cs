@@ -89,9 +89,11 @@ public class WorldBiome : ScriptableObject
         WorldBiome bestOreBiome = null;
         var bestOreBiomeRating = 0f;
         
-        foreach (var oreBiome in OreBiomes)
+        for(int i = 0; i < OreBiomes.Length; i++)
         {
-            var oreRating = oreBiome.Evaluate(position, HashCode.Combine(seed, 7), 1f, context);
+            var oreBiome = OreBiomes[i];
+            
+            var oreRating = oreBiome.Evaluate(position, HashCode.Combine(seed, i, 7), 1f, context);
 
             if (oreRating >= bestOreBiomeRating)
             {

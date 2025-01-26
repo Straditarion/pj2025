@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
-  m_Name: Sun Deposit Tile
+  m_Name: Gold Deposit Tile
   m_EditorClassIdentifier: 
   Obstacle: 0
-  Prefab: {fileID: 5297077683890587055, guid: b96475a6535960e49bd78dd75d82324a, type: 3}
-  FillSprite: {fileID: 2687863981341954011, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
-  FillLayer: -0.03
-  FillObjectLayer: 11
+  Prefab: {fileID: 4602515670411908784, guid: 0dbdab8e0a6c6ad4798df55a429c6294, type: 3}
+  FillSprite: {fileID: -2868050816844536123, guid: f622b86934c187e43892ce805a8a2af3, type: 3}
+  FillLayer: -0.025
+  FillObjectLayer: 10
   BackgroundSprite: {fileID: 0}
   BackgroundLayer: -0.01
   BackgroundObjectLayer: 0
-  SpawnCondition: 1
+  SpawnCondition: 0

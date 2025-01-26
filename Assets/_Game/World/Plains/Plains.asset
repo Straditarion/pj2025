@@ -20,6 +20,11 @@ MonoBehaviour:
     NoiseRange: {x: 1, y: -1}
   OreBiomes:
   - {fileID: 11400000, guid: e593d40a1f022a54d9142c35facf4808, type: 2}
+  - {fileID: 11400000, guid: be12c1bf7f2d6ea438c34efea653dc4f, type: 2}
+  - {fileID: 11400000, guid: 043a7881350a2e2479d1c3e2180a0429, type: 2}
+  - {fileID: 11400000, guid: 939961f42922c7245ba4474406b1d0f3, type: 2}
+  - {fileID: 11400000, guid: dc6f847a5296c574390056dca027a95e, type: 2}
+  - {fileID: 11400000, guid: e3d65fdeef26dc74e9a04e31c1b17dd3, type: 2}
   Tiles:
   - {fileID: 11400000, guid: 866f5b3b0da2a5043993ec87a6104bf7, type: 2}
   - {fileID: 11400000, guid: 96c8ab692d12e3c4e9b123751ad6b2ff, type: 2}

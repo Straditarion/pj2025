@@ -39,6 +39,9 @@ public class Chest : Building
         var (_, outputs) = GetIOConveyors();
         var availableOutputs = outputs.Where(x => x.CanTakeItem(null)).ToList();
 
+        if(availableOutputs.Count == 0)
+            return;
+        
         var output = availableOutputs[_step % availableOutputs.Count];
         
         foreach (var resource in _content)

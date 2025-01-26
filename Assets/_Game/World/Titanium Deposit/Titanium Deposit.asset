@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c9bc57eee304984bb2922cf1d5aa66e, type: 3}
-  m_Name: Sun Deposit
+  m_Name: Titanium Deposit
   m_EditorClassIdentifier: 
-  Noise: {fileID: 11400000, guid: 8cc8c72201ce1dd4891c92fb6d0dd543, type: 2}
+  Noise: {fileID: 11400000, guid: 925f79811d6fcfb408380c43225c2bac, type: 2}
   NoiseRange: {x: 1, y: 0}
-  NoiseThreshold: 0.9
+  NoiseThreshold: 0.975
   ChildBiomes: []
   OreBiomes: []
   Tiles:
-  - {fileID: 11400000, guid: 78100b26e799af24fb4d93df094de7d0, type: 2}
+  - {fileID: 11400000, guid: 8bfaf199c72760d42b2cb08de8d50ca6, type: 2}
