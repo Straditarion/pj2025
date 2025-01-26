@@ -46,7 +46,7 @@ public class GlobalResourceUIController : MonoBehaviour
         }
 
         var resources = GlobalInventoryState.Instance.ResourceStash.Values.ToList();
-        resources.Sort((a, b) => a.Resource.OrderIndex > b.Resource.OrderIndex ? 1 : -1);
+        resources.Sort((a, b) => a.Resource.OrderIndex < b.Resource.OrderIndex ? 1 : -1);
         
         _labels.ForEach( Destroy );
 

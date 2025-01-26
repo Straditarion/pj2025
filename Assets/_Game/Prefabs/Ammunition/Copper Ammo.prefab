@@ -135,6 +135,6 @@ MonoBehaviour:
   Damage: 1
   SpecialDamage: []
   Speed: 25
-  Radius: 0.5
+  Radius: 0.6
   Range: 22.5
   Resource: {fileID: 1590493058230501027, guid: 731650711ce5c174d85651b85668d3e7, type: 3}

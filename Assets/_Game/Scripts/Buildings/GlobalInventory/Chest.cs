@@ -26,18 +26,9 @@ public class Chest : Building
 
         foreach (var resource in _content)
         {
-            GlobalInventoryState.Instance.VirtualChest.TryAdd(resource.Name, new ResourceStash
-            {
-                Resource = resource,
-                Amount = 0,
-            });
-
-            GlobalInventoryState.Instance.VirtualChest[resource.Name].Amount++;
-            
-            Destroy(resource.gameObject);
+            GlobalInventoryState.Instance.AddResource(resource, false);
         }
         
-        _content.Clear();
         OnGlobalResourceAmountChanged?.Invoke();
     }
     

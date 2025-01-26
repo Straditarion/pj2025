@@ -99,6 +99,7 @@ public class GlobalInventoryState : MonoBehaviour
     {
         foreach (var stash in resourceList)
         {
+            stash.Resource.transform.position = Vector2.one * 7777;
             VirtualChest.TryAdd(stash.Resource.Name, new ResourceStash
             {
                 Resource = stash.Resource,
@@ -109,6 +110,21 @@ public class GlobalInventoryState : MonoBehaviour
         }
         
         Chest.OnGlobalResourceAmountChanged?.Invoke();
+    }
+    
+    public void AddResource(Resource resource, bool triggerEvent = true)
+    {
+        resource.transform.position = Vector2.one * 7777;
+        VirtualChest.TryAdd(resource.Name, new ResourceStash
+        {
+            Resource = resource,
+            Amount = 0,
+        });
+
+        VirtualChest[resource.Name].Amount++;
+        
+        if(triggerEvent)
+            Chest.OnGlobalResourceAmountChanged?.Invoke();
     }
 }
 

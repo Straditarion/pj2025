@@ -32,15 +32,7 @@ public class Splitter : Building
         
         foreach (var splitterItem in _items)
         {
-            GlobalInventoryState.Instance.VirtualChest.TryAdd(splitterItem.resource.Name, new ResourceStash
-            {
-                Resource = splitterItem.resource,
-                Amount = 0,
-            });
-
-            GlobalInventoryState.Instance.VirtualChest[splitterItem.resource.Name].Amount++;
-            
-            Destroy(splitterItem.resource.gameObject);
+            GlobalInventoryState.Instance.AddResource(splitterItem.resource);
         }
     }
     
