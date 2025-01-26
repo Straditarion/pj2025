@@ -10,6 +10,8 @@ public class Grid<TObject>
 
     private Dictionary<Vector2Int, TObject> _values = new();
 
+    public IReadOnlyDictionary<Vector2Int, TObject> Values => _values;
+    
     public TObject Get(Vector2Int key)
     {
         return _values.TryGetValue(key, out var value) ? value : default(TObject);

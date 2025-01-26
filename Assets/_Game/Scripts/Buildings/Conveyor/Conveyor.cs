@@ -24,8 +24,20 @@ public class Conveyor : Building
     {
         ConveyorScheduler.Instance.Remove(this);
         
-        if(Item != null)
-            Destroy(Item.gameObject);
+        if(Item == null)
+            return;
+            
+        GlobalInventoryState.Instance.VirtualChest.TryAdd(Item.Name, new ResourceStash
+        {
+            Resource = Item,
+            Amount = 0,
+        });
+
+        GlobalInventoryState.Instance.VirtualChest[Item.Name].Amount++;
+        
+        Destroy(Item.gameObject);
+        
+        Chest.OnGlobalResourceAmountChanged?.Invoke();
     }
     
     public override bool CanTakeItem(Resource item) => Item == null;

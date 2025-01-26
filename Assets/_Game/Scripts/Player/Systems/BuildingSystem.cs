@@ -102,6 +102,9 @@ public class BuildingSystem : PlayerSystem
     
     private bool CanPlaceBuildingOnPosition(Vector2Int position)
     {
+        if (!Player.Instance.GetSystem<BubbleManager>().IsWithinBubble(CalculateObjectPosition(position), Mathf.Max(_buildingPrefab.Size.x, _buildingPrefab.Size.y)))
+            return false;
+
         var size = (Vector2)_buildingPrefab.Size;
         
         if (_rotation % 2 == 1)

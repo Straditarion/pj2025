@@ -30,9 +30,17 @@ public class Splitter : Building
     {
         ConveyorScheduler.Instance.Remove(this);
         
-        foreach (var item in _items)
+        foreach (var splitterItem in _items)
         {
-            Destroy(item.resource.gameObject);
+            GlobalInventoryState.Instance.VirtualChest.TryAdd(splitterItem.resource.Name, new ResourceStash
+            {
+                Resource = splitterItem.resource,
+                Amount = 0,
+            });
+
+            GlobalInventoryState.Instance.VirtualChest[splitterItem.resource.Name].Amount++;
+            
+            Destroy(splitterItem.resource.gameObject);
         }
     }
     

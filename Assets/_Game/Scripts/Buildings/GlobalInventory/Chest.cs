@@ -21,10 +21,24 @@ public class Chest : Building
     {
         BuildingScheduler.Instance.Remove(this);
 
+        if(_content is null)
+            return;
+
         foreach (var resource in _content)
         {
+            GlobalInventoryState.Instance.VirtualChest.TryAdd(resource.Name, new ResourceStash
+            {
+                Resource = resource,
+                Amount = 0,
+            });
+
+            GlobalInventoryState.Instance.VirtualChest[resource.Name].Amount++;
+            
             Destroy(resource.gameObject);
         }
+        
+        _content.Clear();
+        OnGlobalResourceAmountChanged?.Invoke();
     }
     
     public override bool CanTakeItem(Resource item) => true;
