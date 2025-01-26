@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
+  m_Name: Sun Deposit Tile
+  m_EditorClassIdentifier: 
+  Obstacle: 0
+  Prefab: {fileID: 5297077683890587055, guid: b96475a6535960e49bd78dd75d82324a, type: 3}
+  FillSprite: {fileID: 2687863981341954011, guid: bb8fbb3508ad60c4e9f7cec02b4295ed, type: 3}
+  FillLayer: -0.03
+  FillObjectLayer: 11
+  BackgroundSprite: {fileID: 0}
+  BackgroundLayer: -0.01
+  BackgroundObjectLayer: 0
+  SpawnCondition: 1
