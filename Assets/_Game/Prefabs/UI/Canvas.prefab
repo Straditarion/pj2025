@@ -1229,6 +1229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3220518481694142598}
   - component: {fileID: 8826980892328121464}
+  - component: {fileID: 1702781228800353482}
   m_Layer: 0
   m_Name: Resources
   m_TagString: Untagged
@@ -1279,6 +1280,19 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1702781228800353482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352369852643544663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eea7e74eca9a7e48aba9817cc538569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resourceLabelPrefab: {fileID: 2606000913947157207, guid: 09c0e2140a933d04fb98b5b72a7bf579, type: 3}
 --- !u!1 &6612886429275272532
 GameObject:
   m_ObjectHideFlags: 0

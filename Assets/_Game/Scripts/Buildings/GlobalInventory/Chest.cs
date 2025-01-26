@@ -64,7 +64,7 @@ public class Chest : Building
         _content.Add(item);
         
         if(triggerEvent)
-            OnGlobalResourceAmountChanged.Invoke();
+            OnGlobalResourceAmountChanged?.Invoke();
     }
 
     public void RemoveItem(Resource item, bool triggerEvent = true)
@@ -72,6 +72,6 @@ public class Chest : Building
         _content.Remove(item);
         
         if(triggerEvent)
-            OnGlobalResourceAmountChanged.Invoke();
+            OnGlobalResourceAmountChanged?.Invoke();
     }
 }

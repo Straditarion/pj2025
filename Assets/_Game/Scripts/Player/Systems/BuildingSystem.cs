@@ -30,6 +30,9 @@ public class BuildingSystem : PlayerSystem
         
         if (_buildingPrefab == null)
             return;
+
+        if(!GlobalInventoryState.Instance.HasResources(_buildingPrefab.Cost))
+            return;
         
         if (!CanPlaceBuildingOnPosition(position))
             return;
@@ -38,6 +41,8 @@ public class BuildingSystem : PlayerSystem
         var newBuilding = Instantiate(_buildingPrefab, objPosition, Quaternion.identity);
         newBuilding.transform.SetParent(GridManager.Instance.BuildingsParent);
         newBuilding.Initialize(position, _rotation);
+        
+        GlobalInventoryState.Instance.RemoveResources(newBuilding.Cost);
         
         for (var x = 0; x < newBuilding.Size.x; x++)
         {
@@ -66,9 +71,8 @@ public class BuildingSystem : PlayerSystem
             }
         }
         
+        GlobalInventoryState.Instance.AddResources(building.Cost);
         Destroy(building.gameObject);
-        
-        //return resources
     }
 
     public void UpdateGhostPosition(Vector2Int position)
@@ -114,8 +118,7 @@ public class BuildingSystem : PlayerSystem
             }
         }
         
-        //add check if not enough resources
-        return true;
+        return GlobalInventoryState.Instance.HasResources(_buildingPrefab.Cost);
     }
     
     private void SpawnGhost(int rotation, Vector3 position)

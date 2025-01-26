@@ -8,6 +8,8 @@ public abstract class Building : MonoBehaviour, ISchedulable
     [SerializeField]
     private Vector2Int _size;
 
+    public List<ResourceStash> Cost;
+    
     public Vector2Int Size => Rotation % 2 == 1 ? new Vector2Int(_size.y, _size.x) : _size;
     
     public SpriteRenderer SpriteRenderer { get; private set; }
