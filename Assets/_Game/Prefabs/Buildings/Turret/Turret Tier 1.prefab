@@ -355,3 +355,5 @@ MonoBehaviour:
   _spread: 10
   _cooldown: 1.5
   _head: {fileID: 1046477153474089216}
+  _shootShound: {fileID: 8300000, guid: 4fddcac462a929446b2215f46b8ab720, type: 3}
+  _shootSoundVolume: 0.3

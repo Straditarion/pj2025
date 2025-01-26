@@ -17,6 +17,10 @@ public class Turret : Building
     private float _cooldown;
     [SerializeField]
     private Transform _head;
+    [SerializeField]
+    private AudioClip _shootShound;
+    [SerializeField]
+    private float _shootSoundVolume;
 
     private Ammunition _loadedAmmunition;
     private float _timer;
@@ -77,6 +81,8 @@ public class Turret : Building
 
                 if (closestEnemy != null)
                 {
+                    SoundPlayer.Instance.Play(_shootShound, _shootSoundVolume);
+                    
                     _head.transform.eulerAngles += Vector3.forward * Vector2.SignedAngle(_head.transform.right,  (closestEnemy.Predict(_head.transform.position, _loadedAmmunition) - (Vector2)_head.transform.position).normalized);
 
                     _head.transform.eulerAngles += Vector3.forward * Random.Range(-_spread, _spread);

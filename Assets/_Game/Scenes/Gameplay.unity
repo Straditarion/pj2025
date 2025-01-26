@@ -1512,10 +1512,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawners
       objectReference: {fileID: 0}
-    - target: {fileID: 2324758652276605703, guid: 347021286d3bc9c41a85ccadfa548602, type: 3}
-      propertyPath: SkipInit
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3075464912910590457, guid: 347021286d3bc9c41a85ccadfa548602, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.7452917
