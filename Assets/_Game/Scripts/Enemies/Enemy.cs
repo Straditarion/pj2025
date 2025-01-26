@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour, ISchedulable
         var direction = (position - (Vector2)transform.position).normalized;
         
         var noise = _noise.GetNoise(transform.position.x, transform.position.y);
-
+        
         direction = Quaternion.Euler(0f, 0f, noise * NoiseIntensity) * direction;
         
         if (invert)
