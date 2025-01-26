@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277310811955481016}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4829906822103266940}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!212 &363354617803754121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
-  m_Sprite: {fileID: 6398492527668056779, guid: c65110da1f16ca14ea86fadb386d4d62, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -6958083050121602837, guid: 2dbb8143d132c17498a154632056abeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,9 +96,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4829906822103266940}
-  - component: {fileID: 1590493058230501027}
+  - component: {fileID: 8168609455699586579}
   m_Layer: 0
-  m_Name: Copper Ingot Resource
+  m_Name: Copper Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,14 +113,14 @@ Transform:
   m_GameObject: {fileID: 4926929954422992318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 12.195085, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3185937160884454604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1590493058230501027
+--- !u!114 &8168609455699586579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,6 +129,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4926929954422992318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34c11d959bc41c7a4237c4e048dd9cf, type: 3}
+  m_Script: {fileID: 11500000, guid: e5a883e8fd1951d40950eab6473333d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 1
+  SpecialDamage: []
+  Speed: 25
+  Radius: 0.5
+  Resource: {fileID: 1590493058230501027, guid: 731650711ce5c174d85651b85668d3e7, type: 3}

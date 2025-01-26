@@ -519,6 +519,67 @@ MonoBehaviour:
   Exponent: 0.4
   Visuals: {fileID: 1444483892}
   World: {fileID: 687030066}
+--- !u!1001 &662468866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151991476208548292, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 618780131653698447, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: BiteDamage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847225012513776553, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+      propertyPath: m_Name
+      value: SmolFish
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
 --- !u!1 &687030065
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +651,7 @@ GameObject:
   - component: {fileID: 717349413}
   - component: {fileID: 717349414}
   m_Layer: 0
-  m_Name: AirFactoryScheduler
+  m_Name: BuildingScheduler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1258,3 +1319,4 @@ SceneRoots:
   - {fileID: 315379151}
   - {fileID: 687030067}
   - {fileID: 1444483891}
+  - {fileID: 662468866}

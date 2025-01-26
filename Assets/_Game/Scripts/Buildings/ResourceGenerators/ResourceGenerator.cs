@@ -9,6 +9,8 @@ public class ResourceGenerator : Building
     private List<Resource> _resourcePrefabs = new ();
     [SerializeField]
     private float _frequency;
+    [SerializeField]
+    private SpriteAnimation _animation;
 
     private float _timer;
     private int _counter;
@@ -49,6 +51,8 @@ public class ResourceGenerator : Building
         
         if(totalCount == 0)
             return;
+
+        _animation.enabled = true;
         
         _timer += deltaTime;
         if (_timer < 1f / (_frequency * totalCount))

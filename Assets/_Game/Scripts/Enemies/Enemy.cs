@@ -1,9 +1,16 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour, ISchedulable
 {
+    public static HashSet<Enemy> Enemies = new HashSet<Enemy>();
+    
+    [SerializeField] 
+    public float Health;
+    [SerializeField] 
+    public float Radius;
     [SerializeField] 
     public float MoveSpeed;
     [SerializeField] 
@@ -20,14 +27,38 @@ public class Enemy : MonoBehaviour, ISchedulable
     public float BiteDamage;
     [SerializeField] 
     public GameObject Bubble;
+    [SerializeField] 
+    public Transform HpBar;
 
     protected FastNoise _noise;
 
     protected float _cooldown;
+
+    protected float _health;
+    
+    private int _hashCode;
+
+    public void TakeDamage(float damage)
+    {
+        _health -= damage * 1.001f;
+        
+        HpBar.localScale = Vector3.right * Mathf.Clamp01(_health / Health);
+
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     
     private void Start()
     {
+        _hashCode = HashCode.Combine(GetInstanceID());
+        
+        _health = Health;
+        
         _noise = Noise.GetLibInstance(GetInstanceID());
+
+        Enemies.Add(this);
         
         EnemyScheduler.Instance.Register(this);
         
@@ -38,6 +69,8 @@ public class Enemy : MonoBehaviour, ISchedulable
 
     private void OnDestroy()
     {
+        Enemies.Remove(this);
+
         EnemyScheduler.Instance.Remove(this);
     }
     
@@ -75,5 +108,18 @@ public class Enemy : MonoBehaviour, ISchedulable
         transform.eulerAngles += Vector3.forward * Mathf.Clamp(signedAngle, -TurnClamp, TurnClamp) * TurnSpeed * deltaTime;
         
         transform.position += transform.right * MoveSpeed * deltaTime;
+    }
+
+    public virtual Vector2 Predict(Vector2 position, Ammunition ammunition)
+    {
+        var dst = Vector2.Distance(position, transform.position);
+        var t = dst / ammunition.Speed;
+
+        return transform.position + transform.right * MoveSpeed * t;
+    }
+
+    public override int GetHashCode()
+    {
+        return _hashCode;
     }
 }

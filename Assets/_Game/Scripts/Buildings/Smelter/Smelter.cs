@@ -28,6 +28,8 @@ public class Smelter : Building
     
     protected override void OnInit()
     {
+        _needsFuel = true;
+        
         BuildingScheduler.Instance.Register(this);
     }
 
@@ -41,9 +43,9 @@ public class Smelter : Building
         var can = item.gameObject.name.StartsWith(_fuel.gameObject.name) && _needsFuel;
 
         foreach (var recipe in _recipes)
-            can = can || item.gameObject.name.StartsWith(recipe.Input.gameObject.name) && !_needsFuel;
+            can = can || (item.gameObject.name.StartsWith(recipe.Input.gameObject.name) && !_needsFuel);
         
-        return can && _timer <= 0f;
+        return can && _currentResource == null && _timer <= 0f;
     }
 
     public override void TakeItem(Resource item)
@@ -57,13 +59,14 @@ public class Smelter : Building
         {
             if (!item.gameObject.name.StartsWith(recipe.Input.gameObject.name))
                 continue;
-            
+
             _currentResource = recipe.Output;
             _timer = recipe.Duration;
             _animation.enabled = true;
+            break;
         }
     }
-    
+
     public override void ExecuteStep(float deltaTime)
     {
         if (_timer <= 0f)
@@ -76,8 +79,10 @@ public class Smelter : Building
                 {
                     if (conveyor.CanTakeItem(_currentResource))
                     {
-                        conveyor.TakeItem(_currentResource);
+                        conveyor.TakeItem(Instantiate(_currentResource, conveyor.transform.position, Quaternion.identity));
+                        Debug.Log("F");
                         _currentResource = null;
+                        _needsFuel = true;
                         break;
                     }
                 }
