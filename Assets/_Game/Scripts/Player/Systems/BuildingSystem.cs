@@ -136,7 +136,7 @@ public class BuildingSystem : PlayerSystem
         var newGhost = Instantiate(_buildingPrefab, position, Quaternion.identity);
         newGhost.AsGhost(pos, rotation);
         newGhost.SpriteRenderer.color = GetGhostColor(pos);
-        newGhost.SpriteRenderer.sortingOrder = 20;
+        newGhost.SpriteRenderer.sortingOrder = 24;
         
         _ghost = newGhost;
     }
