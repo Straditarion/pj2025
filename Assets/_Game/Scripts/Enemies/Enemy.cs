@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour, ISchedulable
     {
         _health -= damage * 1.001f;
         
-        HpBar.localScale = Vector3.right * Mathf.Clamp01(_health / Health);
+        HpBar.localScale = new Vector3(Mathf.Clamp01(_health / Health), 1f, 1f);
 
         if (_health <= 0)
         {

@@ -341,9 +341,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _size: {x: 2, y: 2}
+  Cost: []
   _ammunition:
   - {fileID: 8168609455699586579, guid: fa768b5fa6aeb3a4aaa1885cba4444be, type: 3}
   _range: 15
   _spread: 10
-  _cooldown: 2
+  _cooldown: 1.5
   _head: {fileID: 1046477153474089216}
