@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3075464912910590457}
   - component: {fileID: 2324758652276605703}
+  - component: {fileID: 1569450984148529638}
+  - component: {fileID: 7368148444829318303}
+  - component: {fileID: 6481595303590500879}
   m_Layer: 0
   m_Name: Spawners
   m_TagString: Untagged
@@ -44,10 +47,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bac76d335534e4186dd5ff6676a72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnDelay: {x: 25, y: 60}
+  SpawnDelay: {x: 40, y: 80}
   SpawnAmount: {x: 0.2, y: 1}
-  SpawnDelayMul: 0.95
-  SpawnAmountAdd: {x: 0.2, y: 0.4}
+  SpawnDelayMul: 0.975
+  SpawnAmountAdd: {x: 0.1, y: 0.3}
   SpawnOffset: 1
-  SkipInit: 1
+  SkipInit: 0
   Enemy: {fileID: 3847225012513776553, guid: 9f52a42eb8abb2f489f459c2fc202d28, type: 3}
+--- !u!114 &1569450984148529638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387324215414106202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bac76d335534e4186dd5ff6676a72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnDelay: {x: 160, y: 220}
+  SpawnAmount: {x: 0.2, y: 0.5}
+  SpawnDelayMul: 0.975
+  SpawnAmountAdd: {x: 0.1, y: 0.3}
+  SpawnOffset: 1
+  SkipInit: 0
+  Enemy: {fileID: 3847225012513776553, guid: 96f8b5daf8ed68a4093df4da796c7f42, type: 3}
+--- !u!114 &7368148444829318303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387324215414106202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bac76d335534e4186dd5ff6676a72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnDelay: {x: 220, y: 250}
+  SpawnAmount: {x: 0.2, y: 0.5}
+  SpawnDelayMul: 0.975
+  SpawnAmountAdd: {x: 0.1, y: 0.3}
+  SpawnOffset: 1
+  SkipInit: 0
+  Enemy: {fileID: 3847225012513776553, guid: 9e59653b3ae84974bbf616803778097e, type: 3}
+--- !u!114 &6481595303590500879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387324215414106202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bac76d335534e4186dd5ff6676a72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnDelay: {x: 540, y: 700}
+  SpawnAmount: {x: 0.2, y: 0.9}
+  SpawnDelayMul: 0.95
+  SpawnAmountAdd: {x: 0.1, y: 0.6}
+  SpawnOffset: 1
+  SkipInit: 0
+  Enemy: {fileID: 3847225012513776553, guid: 7cbd7ed92ccb1704792b259573f0a2e1, type: 3}
