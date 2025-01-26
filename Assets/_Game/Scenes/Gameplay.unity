@@ -1351,6 +1351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4f293b6cfa47f19808fc540f5b5756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startResources:
+  - Resource: {fileID: 1590493058230501027, guid: 731650711ce5c174d85651b85668d3e7, type: 3}
+    Amount: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1364,3 +1367,4 @@ SceneRoots:
   - {fileID: 687030067}
   - {fileID: 1444483891}
   - {fileID: 662468866}
+  - {fileID: 2143720902}

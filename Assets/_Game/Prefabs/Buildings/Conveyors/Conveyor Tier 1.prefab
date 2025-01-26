@@ -150,6 +150,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _size: {x: 1, y: 1}
+  Cost:
+  - Resource: {fileID: 1590493058230501027, guid: 731650711ce5c174d85651b85668d3e7, type: 3}
+    Amount: 1
   _conveyorSpeed: 2.5
   IsTurn: 0
   JunctionSender: 0
