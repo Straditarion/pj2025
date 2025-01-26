@@ -341,9 +341,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _size: {x: 2, y: 2}
-  Cost: []
+  Cost:
+  - Resource: {fileID: 1590493058230501027, guid: 731650711ce5c174d85651b85668d3e7, type: 3}
+    Amount: 12
+  - Resource: {fileID: 1590493058230501027, guid: e1946df21320a5a40be6ed8381d79995, type: 3}
+    Amount: 12
   _ammunition:
   - {fileID: 8168609455699586579, guid: fa768b5fa6aeb3a4aaa1885cba4444be, type: 3}
+  - {fileID: 8168609455699586579, guid: 7045bc5a99d6c6f498561e098cdcfe87, type: 3}
+  - {fileID: 8168609455699586579, guid: 72eb290cb8766f543a748531e8912543, type: 3}
+  - {fileID: 8168609455699586579, guid: e4cc46e72d9b88745a95ee3d93f6a519, type: 3}
   _range: 15
   _spread: 10
   _cooldown: 1.5
