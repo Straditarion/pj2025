@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -6958083050121602837, guid: 2dbb8143d132c17498a154632056abeb, type: 3}
+  m_Sprite: {fileID: 7321944065169122430, guid: 099a84ce053fcc24c853bad673b37c80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4829906822103266940}
   - component: {fileID: 8168609455699586579}
   m_Layer: 0
-  m_Name: Copper Ammo
+  m_Name: Iron Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,9 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a883e8fd1951d40950eab6473333d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 3
   SpecialDamage: []
-  Speed: 25
+  Speed: 36
   Radius: 0.6
-  Range: 22.5
-  Resource: {fileID: 1590493058230501027, guid: 731650711ce5c174d85651b85668d3e7, type: 3}
+  Range: 26
+  Resource: {fileID: 1590493058230501027, guid: 13cb2670e1587c54c8be53c1ea35e5a7, type: 3}
