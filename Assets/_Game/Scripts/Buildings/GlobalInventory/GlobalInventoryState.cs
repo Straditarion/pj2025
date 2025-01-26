@@ -4,15 +4,15 @@ using UnityEngine;
 public class GlobalInventoryState : MonoBehaviour
 {
     public static GlobalInventoryState Instance;
-    public Dictionary<string, ResourceStash> VirtualChest { get; private set; }
-    public Dictionary<string, ResourceStash> ResourceStash { get; private set; }
+    public Dictionary<string, int> VirtualChest { get; private set; }
+    public Dictionary<string, int> Resources { get; private set; }
 
     [SerializeField] private List<ResourceStash> _startResources = new();
     
     private void Awake()
     {
         VirtualChest = new ();
-        ResourceStash = new();
+        Resources = new();
         Instance = this;
     }
 
@@ -25,10 +25,10 @@ public class GlobalInventoryState : MonoBehaviour
     {
         foreach (var stash in resourceList) 
         {
-            if (!ResourceStash.TryGetValue(stash.Resource.Name, out var value))
+            if (!Resources.TryGetValue(stash.Resource.Name, out var value))
                 return false;
 
-            if (value.Amount < stash.Amount)
+            if (value < stash.Amount)
                 return false;
         }
         return true;
@@ -44,8 +44,8 @@ public class GlobalInventoryState : MonoBehaviour
             if(!VirtualChest.TryGetValue(stash.Resource.Name, out var virtualStash))
                 continue;
 
-            var delta = Mathf.Min(virtualStash.Amount, stash.Amount);
-            VirtualChest[stash.Resource.Name].Amount -= delta;
+            var delta = Mathf.Min(virtualStash, stash.Amount);
+            VirtualChest[stash.Resource.Name] -= delta;
             stash.Amount = delta;
             
             if(stash.Amount <= 0)
@@ -65,16 +65,15 @@ public class GlobalInventoryState : MonoBehaviour
 
         foreach (var chest in chests)
         {
-            var toRemoveFromChest = new List<Resource>();
-            foreach (var resource in chest.Content)
+            foreach (var chestKvp in chest.Content)
             {
                 foreach (var stash in listCopy)
                 {
-                    if (stash.Resource.Name != resource.Name)
+                    if (stash.Resource.Name != chestKvp.Key)
                         continue;
                     
-                    toRemoveFromChest.Add(resource);
-                    stash.Amount--;
+                    var delta = Mathf.Min(chestKvp.Value, stash.Amount);
+                    stash.Amount -= delta;
 
                     if (stash.Amount <= 0)
                         listCopy.Remove(stash);
@@ -85,8 +84,6 @@ public class GlobalInventoryState : MonoBehaviour
                 if(listCopy.Count == 0)
                     break;
             }
-            
-            toRemoveFromChest.ForEach( x => chest.RemoveItem(x, false) );
             
             if(listCopy.Count == 0)
                 break;
@@ -99,29 +96,22 @@ public class GlobalInventoryState : MonoBehaviour
     {
         foreach (var stash in resourceList)
         {
-            stash.Resource.transform.position = Vector2.one * 7777;
-            VirtualChest.TryAdd(stash.Resource.Name, new ResourceStash
-            {
-                Resource = stash.Resource,
-                Amount = 0,
-            });
-
-            VirtualChest[stash.Resource.Name].Amount += stash.Amount;
+            VirtualChest.TryAdd(stash.Resource.Name, 0);
+            VirtualChest[stash.Resource.Name] += stash.Amount;
         }
         
         Chest.OnGlobalResourceAmountChanged?.Invoke();
     }
     
-    public void AddResource(Resource resource, bool triggerEvent = true)
+    public void AddResource(string name, bool triggerEvent = true)
     {
-        resource.transform.position = Vector2.one * 7777;
-        VirtualChest.TryAdd(resource.Name, new ResourceStash
-        {
-            Resource = resource,
-            Amount = 0,
-        });
-
-        VirtualChest[resource.Name].Amount++;
+        AddResource(name, 1, triggerEvent);
+    }
+    
+    public void AddResource(string name, int count, bool triggerEvent = true)
+    {
+        VirtualChest.TryAdd(name, 0);
+        VirtualChest[name] += count;
         
         if(triggerEvent)
             Chest.OnGlobalResourceAmountChanged?.Invoke();

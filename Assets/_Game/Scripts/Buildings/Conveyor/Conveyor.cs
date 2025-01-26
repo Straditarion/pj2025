@@ -20,14 +20,20 @@ public class Conveyor : Building
         ConveyorScheduler.Instance.Register(this);
     }
 
+    public override void OnDeconstruct()
+    {
+        if(Item != null)
+            GlobalInventoryState.Instance.AddResource(Item.Name);
+        
+        OnDestroy();
+    }
+
     private void OnDestroy()
     {
         ConveyorScheduler.Instance.Remove(this);
         
-        if(Item == null)
-            return;
-        
-        GlobalInventoryState.Instance.AddResource(Item);
+        if(Item != null)
+            Destroy(Item.gameObject);
     }
     
     public override bool CanTakeItem(Resource item) => Item == null;

@@ -72,6 +72,7 @@ public class BuildingSystem : PlayerSystem
         }
         
         GlobalInventoryState.Instance.AddResources(building.Cost);
+        building.OnDeconstruct();
         Destroy(building.gameObject);
     }
 

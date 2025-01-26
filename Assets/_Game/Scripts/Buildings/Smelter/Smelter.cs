@@ -80,7 +80,6 @@ public class Smelter : Building
                     if (conveyor.CanTakeItem(_currentResource))
                     {
                         conveyor.TakeItem(Instantiate(_currentResource, conveyor.transform.position, Quaternion.identity));
-                        Debug.Log("F");
                         _currentResource = null;
                         _needsFuel = true;
                         break;

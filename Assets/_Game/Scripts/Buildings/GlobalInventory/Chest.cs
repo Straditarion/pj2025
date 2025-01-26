@@ -7,16 +7,16 @@ public class Chest : Building
 {
     public static Action OnGlobalResourceAmountChanged { get; set; }
 
-    public List<Resource> Content => _content;
+    public IReadOnlyDictionary<string, int> Content => _content;
     
-    private List<Resource> _content = new();
+    private Dictionary<string, int> _content = new();
     private int _step;
     
     protected override void OnInit()
     {
         BuildingScheduler.Instance.Register(this);
     }
-
+    
     private void OnDestroy()
     {
         BuildingScheduler.Instance.Remove(this);
@@ -24,9 +24,9 @@ public class Chest : Building
         if(_content is null)
             return;
 
-        foreach (var resource in _content)
+        foreach (var kvp in _content)
         {
-            GlobalInventoryState.Instance.AddResource(resource, false);
+            GlobalInventoryState.Instance.AddResource(kvp.Key, kvp.Value, false);
         }
         
         OnGlobalResourceAmountChanged?.Invoke();
@@ -36,8 +36,8 @@ public class Chest : Building
 
     public override void TakeItem(Resource item)
     {
-        AddItem(item);
-        item.transform.position = Vector2.one * 7777;
+        AddItem(item.Name);
+        Destroy(item.gameObject);
     }
 
     public override void ExecuteStep(float deltaTime)
@@ -53,28 +53,36 @@ public class Chest : Building
         
         var output = availableOutputs[_step % availableOutputs.Count];
         
-        foreach (var resource in _content)
+        foreach (var kvp in _content)
         {
-            resource.transform.position = output.transform.position;
-            output.TakeItem(resource);
-            RemoveItem(resource);
+            var newResource = Instantiate(ResourceLibrary.Instance.Items[kvp.Key]);
+            newResource.transform.position = output.transform.position;
+            output.TakeItem(newResource);
+            RemoveItem(kvp.Key);
             break;
         }
 
         _step = (_step + 1) % (int.MaxValue - 1);
     }
 
-    public void AddItem(Resource item, bool triggerEvent = true)
+    public void AddItem(string itemName, bool triggerEvent = true)
     {
-        _content.Add(item);
+        _content.TryAdd(itemName, 0);
+        _content[itemName]++;
         
         if(triggerEvent)
             OnGlobalResourceAmountChanged?.Invoke();
     }
 
-    public void RemoveItem(Resource item, bool triggerEvent = true)
+    public void RemoveItem(string itemName, bool triggerEvent = true)
     {
-        _content.Remove(item);
+        if(!_content.TryGetValue(itemName, out var value))
+            return;
+        
+        if(value == 0)
+            return;
+
+        _content[itemName]--;
         
         if(triggerEvent)
             OnGlobalResourceAmountChanged?.Invoke();

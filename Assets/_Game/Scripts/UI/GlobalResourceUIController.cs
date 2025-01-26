@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,43 +19,35 @@ public class GlobalResourceUIController : MonoBehaviour
     private void OnGlobalResourceAmountChanged()
     {
         var chests = FindObjectsByType<Chest>(FindObjectsSortMode.None);
-        GlobalInventoryState.Instance.ResourceStash.Clear();
+        GlobalInventoryState.Instance.Resources.Clear();
         
         foreach (var chest in chests)
         {
-            foreach (var resource in chest.Content)
+            foreach (var kvp in chest.Content)
             {
-                GlobalInventoryState.Instance.ResourceStash.TryAdd(resource.Name, new ResourceStash
-                {
-                    Resource = resource,
-                    Amount = 0,
-                });
-
-                GlobalInventoryState.Instance.ResourceStash[resource.Name].Amount += 1;
+                GlobalInventoryState.Instance.Resources.TryAdd(kvp.Key, 0);
+                GlobalInventoryState.Instance.Resources[kvp.Key] += kvp.Value;
             }
         }
         
-        foreach (var stash in GlobalInventoryState.Instance.VirtualChest.Values)
+        foreach (var kvp in GlobalInventoryState.Instance.VirtualChest)
         {
-            GlobalInventoryState.Instance.ResourceStash.TryAdd(stash.Resource.Name, new ResourceStash
-            {
-                Resource = stash.Resource,
-                Amount = 0,
-            });
-
-            GlobalInventoryState.Instance.ResourceStash[stash.Resource.Name].Amount += stash.Amount;
+            GlobalInventoryState.Instance.Resources.TryAdd(kvp.Key, 0);
+            GlobalInventoryState.Instance.Resources[kvp.Key] += kvp.Value;
         }
 
-        var resources = GlobalInventoryState.Instance.ResourceStash.Values.ToList();
-        resources.Sort((a, b) => a.Resource.OrderIndex < b.Resource.OrderIndex ? 1 : -1);
+        var resources = GlobalInventoryState.Instance.Resources.ToList();
+        resources.Sort((a, b) => 
+            ResourceLibrary.Instance.Items[a.Key].OrderIndex < ResourceLibrary.Instance.Items[b.Key].OrderIndex ? 1 : -1);
         
         _labels.ForEach( Destroy );
 
         foreach (var resource in resources)
         {
+            var instance = ResourceLibrary.Instance.Items[resource.Key];
             var newLabel = Instantiate(_resourceLabelPrefab, transform);
-            newLabel.GetComponentsInChildren<Image>()[1].sprite = resource.Resource.Sprite;
-            newLabel.GetComponentInChildren<TMP_Text>().text = resource.Amount.ToString();
+            newLabel.GetComponentsInChildren<Image>()[1].sprite = instance.Sprite;
+            newLabel.GetComponentInChildren<TMP_Text>().text = resource.Value.ToString();
             _labels.Add(newLabel);
         }
     }

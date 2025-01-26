@@ -26,13 +26,23 @@ public class Splitter : Building
         ConveyorScheduler.Instance.Register(this);
     }
 
+    public override void OnDeconstruct()
+    {
+        foreach (var splitterItem in _items)
+        {
+            GlobalInventoryState.Instance.AddResource(splitterItem.resource.Name);
+        }
+        
+        OnDestroy();
+    }
+    
     private void OnDestroy()
     {
         ConveyorScheduler.Instance.Remove(this);
         
         foreach (var splitterItem in _items)
         {
-            GlobalInventoryState.Instance.AddResource(splitterItem.resource);
+            Destroy(splitterItem.resource.gameObject);
         }
     }
     

@@ -123,6 +123,11 @@ public abstract class Building : MonoBehaviour, ISchedulable
     {
         
     }
+    
+    public virtual void OnDeconstruct()
+    {
+        
+    }
 
     public abstract bool CanTakeItem(Resource item);
     public abstract void TakeItem(Resource item);
