@@ -15,4 +15,9 @@ public class MainMenuController : MonoBehaviour
                 SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
             };
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
