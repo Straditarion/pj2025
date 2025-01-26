@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        _timer += Time.deltaTime;
+        _timer -= Time.deltaTime;
 
         if (_timer <= 0f)
         {
@@ -45,13 +45,13 @@ public class EnemySpawner : MonoBehaviour
 
             SpawnDelay *= SpawnDelayMul;
             
-            var basePoint = Random.insideUnitCircle.normalized * 200f;
+            var basePoint = Random.insideUnitCircle.normalized * (Player.Instance.GetSystem<BubbleManager>().Radius + 100f);
 
             for (int i = 0; i < amount; i++)
             {
                 var subPoint = basePoint + (Random.insideUnitCircle * Mathf.Sqrt(amount) * SpawnOffset);
                 
-                Instantiate(Enemy, basePoint + subPoint, Quaternion.identity);
+                Instantiate(Enemy, basePoint + subPoint, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
             }
         }
     }
