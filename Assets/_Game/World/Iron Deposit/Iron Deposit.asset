@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c9bc57eee304984bb2922cf1d5aa66e, type: 3}
-  m_Name: Sun Deposit
+  m_Name: Iron Deposit
   m_EditorClassIdentifier: 
-  Noise: {fileID: 11400000, guid: 8cc8c72201ce1dd4891c92fb6d0dd543, type: 2}
+  Noise: {fileID: 11400000, guid: 931dfebf07598d7499605e7eadfe277d, type: 2}
   NoiseRange: {x: 1, y: 0}
-  NoiseThreshold: 0.96
+  NoiseThreshold: 0.97
   ChildBiomes: []
   OreBiomes: []
   Tiles:
-  - {fileID: 11400000, guid: 78100b26e799af24fb4d93df094de7d0, type: 2}
+  - {fileID: 11400000, guid: 1f5acee35fe05ee4fa80f4b6b9497f6e, type: 2}

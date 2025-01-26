@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
+  m_Name: Copper Deposit Tile
+  m_EditorClassIdentifier: 
+  Obstacle: 0
+  Prefab: {fileID: 4602515670411908784, guid: 07ce141e5d2ec8247a78d4bde0697c40, type: 3}
+  FillSprite: {fileID: 6074130336943190385, guid: 5e6fb3d1a788fad4990e294f3b326dab, type: 3}
+  FillLayer: -0.025
+  FillObjectLayer: 10
+  BackgroundSprite: {fileID: 0}
+  BackgroundLayer: -0.01
+  BackgroundObjectLayer: 0
+  SpawnCondition: 0

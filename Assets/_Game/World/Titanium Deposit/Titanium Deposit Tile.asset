@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fef43f01eef9642b29b35c7802c70a, type: 3}
+  m_Name: Titanium Deposit Tile
+  m_EditorClassIdentifier: 
+  Obstacle: 0
+  Prefab: {fileID: 4602515670411908784, guid: 37ab0310590f83441953f9e0af071b01, type: 3}
+  FillSprite: {fileID: -562653714476472352, guid: aba18faeec487f24ba9d8990dff89f0d, type: 3}
+  FillLayer: -0.025
+  FillObjectLayer: 10
+  BackgroundSprite: {fileID: 0}
+  BackgroundLayer: -0.01
+  BackgroundObjectLayer: 0
+  SpawnCondition: 0

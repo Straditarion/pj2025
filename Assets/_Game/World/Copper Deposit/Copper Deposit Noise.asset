@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15d1cee83f9dd4f4f8a404c6cd3b4c1b, type: 3}
-  m_Name: Sun Deposit Noise
+  m_Name: Copper Deposit Noise
   m_EditorClassIdentifier: 
   mainType: 6
   interpolationType: 2
-  frequency: 0.125
+  frequency: 0.2
   octaves: 4
   lacunarity: 1.2
   gain: 0.5
@@ -23,5 +23,5 @@ MonoBehaviour:
   returnType: 7
   dstIndicieLow: 0
   dstIndicieHigh: 1
-  jitter: 0.75
+  jitter: 0.45
   gradientPerturbation: 1
