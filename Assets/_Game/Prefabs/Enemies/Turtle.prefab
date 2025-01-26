@@ -249,6 +249,8 @@ MonoBehaviour:
   BiteDamage: 40
   Bubble: {fileID: 4614590344024612047}
   HpBar: {fileID: 4759306844381438621}
+  DeathSound: {fileID: 8300000, guid: b19506deb074bea4bb1437fd41ef5d80, type: 3}
+  DeathSoundVolume: 0.4
 --- !u!1 &4614590344024612047
 GameObject:
   m_ObjectHideFlags: 0

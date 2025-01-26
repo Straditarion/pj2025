@@ -29,6 +29,10 @@ public class Enemy : MonoBehaviour, ISchedulable
     public GameObject Bubble;
     [SerializeField] 
     public Transform HpBar;
+    [SerializeField] 
+    public AudioClip DeathSound;
+    [SerializeField] 
+    public float DeathSoundVolume;
 
     protected FastNoise _noise;
 
@@ -47,6 +51,9 @@ public class Enemy : MonoBehaviour, ISchedulable
         if (_health <= 0)
         {
             Destroy(gameObject);
+
+            if (DeathSound != null)
+                SoundPlayer.Instance.Play(DeathSound, DeathSoundVolume);
         }
     }
     
