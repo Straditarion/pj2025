@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e072e1ef704b44ad8187f993dc0b02bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: {x: 1, y: 1}
+  _size: {x: 1, y: 1}
   _conveyorSpeed: 2.5
   IsTurn: 0
   JunctionSender: 0

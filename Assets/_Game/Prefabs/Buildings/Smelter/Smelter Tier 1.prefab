@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60d5870afaff1140868d02ef35e26cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: {x: 2, y: 2}
+  _size: {x: 2, y: 2}
   _fuel: {fileID: 0}
   _recipes: []
   _animation: {fileID: 0}

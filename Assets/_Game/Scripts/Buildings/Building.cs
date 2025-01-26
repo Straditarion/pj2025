@@ -6,8 +6,10 @@ public abstract class Building : MonoBehaviour, ISchedulable
 {
     [Header("General Settings")]
     [SerializeField]
-    public Vector2Int Size;
+    private Vector2Int _size;
 
+    public Vector2Int Size => Rotation % 2 == 1 ? new Vector2Int(_size.y, _size.x) : _size;
+    
     public SpriteRenderer SpriteRenderer { get; private set; }
     public int Rotation { get; private set; }
     public Vector2Int GridPosition { get; private set; }
@@ -100,7 +102,7 @@ public abstract class Building : MonoBehaviour, ISchedulable
         
         for (var x = 0; x < Size.x; x++)
         {
-            if(!GridManager.Instance.Buildings.TryGetValue(GridPosition + new Vector2Int(x, Size.x), out var other))
+            if(!GridManager.Instance.Buildings.TryGetValue(GridPosition + new Vector2Int(x, Size.y), out var other))
                 continue;
             
             if(other is not Conveyor conveyor)

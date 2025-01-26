@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35db746ca6cd01248acf9e1fccf7b563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: {x: 2, y: 2}
+  _size: {x: 2, y: 2}
   _fuel: {fileID: 1590493058230501027, guid: 01efe9b054c017f4a8cb623c485ef851, type: 3}
   _production: 7
   _duration: 1

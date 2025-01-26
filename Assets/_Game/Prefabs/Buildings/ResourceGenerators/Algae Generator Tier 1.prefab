@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b9c56cf9724b0ba320b328c1bb23b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: {x: 1, y: 1}
+  _size: {x: 1, y: 1}
   _resourcePrefabs:
   - {fileID: 1590493058230501027, guid: 01efe9b054c017f4a8cb623c485ef851, type: 3}
   _frequency: 0.333
