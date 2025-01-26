@@ -23,6 +23,9 @@ public class Conveyor : Building
     private void OnDestroy()
     {
         ConveyorScheduler.Instance.Remove(this);
+        
+        if(Item != null)
+            Destroy(Item.gameObject);
     }
     
     public override bool CanTakeItem(Resource item) => Item == null;

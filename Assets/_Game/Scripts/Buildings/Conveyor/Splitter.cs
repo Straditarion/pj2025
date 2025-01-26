@@ -29,6 +29,11 @@ public class Splitter : Building
     private void OnDestroy()
     {
         ConveyorScheduler.Instance.Remove(this);
+        
+        foreach (var item in _items)
+        {
+            Destroy(item.resource.gameObject);
+        }
     }
     
     public override bool CanTakeItem(Resource item) => false;
