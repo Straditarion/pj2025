@@ -30,8 +30,8 @@ public abstract class Building : MonoBehaviour, ISchedulable
     };
     public Vector2Int Back => -Forward;
     public Vector2Int Left => -Right;
-    
-    public abstract void ExecuteStep(float deltaTime);
+
+    public virtual void ExecuteStep(float deltaTime) { }
 
     public void Initialize(Vector2Int gridPosition, int rotation)
     {

@@ -1,4 +1,4 @@
 ﻿public interface ISchedulable
 {
-    void ExecuteStep(float deltaTime);
+    void ExecuteStep(float deltaTime) { }
 }

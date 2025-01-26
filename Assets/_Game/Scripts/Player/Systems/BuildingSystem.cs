@@ -66,12 +66,6 @@ public class BuildingSystem : PlayerSystem
             }
         }
         
-        if (building is Conveyor conveyor)
-        {
-            if (conveyor.Item != null)
-                Destroy(conveyor.Item.gameObject);
-        }
-        
         Destroy(building.gameObject);
         
         //return resources
